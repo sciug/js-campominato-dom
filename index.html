@@ -8,33 +8,37 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <div class="difficulty_container">
-        <h2>🌸<span class="title">Campo Minato</span>🌸</h2>
-        <div class="difficulty_group" id="difficulty_group">
-            <label for="difficulty" class="label">chose your difficulty</label>
-            <select name="difficulty" id="difficulty">
-                <option value="100"><span>easy</span></option>
-                <option value="81"><span>normal</span></option>
-                <option value="49"><span>hard</span></option>
-            </select>
+
+    <main class="main_container">
+        <div class="difficulty_container">
+            <h2>💣<span class="title">Campo Minato</span>💣</h2>
+            <div class="difficulty_group" id="difficulty_group">
+                <label for="difficulty" class="label">chose your difficulty</label>
+                <select name="difficulty" id="difficulty">
+                    <option value="100"><span>easy</span></option>
+                    <option value="81"><span>normal</span></option>
+                    <option value="49"><span>hard</span></option>
+                </select>
+            </div>
+           <div class="buttons">
+            <button id="generate">start game</button>
+           
+           </div>
+            
         </div>
-       <div class="buttons">
-        <button id="generate">start game</button>
-       
-       </div>
-        
-    </div>
-    <div class="container" id="container"></div>
-    <div class="playAgain hidden" id="playAgain">
-        <div class="finalmessage">
-            <p>OOOPS it's a 💣</p>
-           <button id="reload" onclick="reload()">play again</button>
-        </div> 
-    </div>
-    <div class="playAgain hidden" id="victory">
-        <div class="finalmessage">hai vinto! 😀</div>
-  <button id="reload" onclick="reload()">play again</button> 
-    </div>
+        <div class="container" id="container"></div>
+        <div class="playAgain hidden" id="playAgain">
+            <div class="finalmessage">
+                <p>OOOPS it's a 💣</p>
+               <button id="reload" onclick="reload()">play again</button>
+            </div> 
+        </div>
+        <div class="playAgain hidden" id="victory">
+            <div class="finalmessage">hai vinto! 😀</div>
+      <button id="reload" onclick="reload()">play again</button> 
+        </div>
+    </main>
+
     
 <script src="./assets/js/main.js"></script>    
 </body>
