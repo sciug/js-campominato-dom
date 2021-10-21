@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo minato Dom</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="difficulty_container">
+        <h2>🌸<span class="title">Campo Minato</span>🌸</h2>
+        <div class="difficulty_group" id="difficulty_group">
+            <label for="difficulty" class="label">chose your difficulty</label>
+            <select name="difficulty" id="difficulty">
+                <option value="100"><span>easy</span></option>
+                <option value="81"><span>normal</span></option>
+                <option value="49"><span>hard</span></option>
+            </select>
+        </div>
+       <div class="buttons">
+        <button id="generate">start game</button>
+       <!--  <button id="reload" onclick="reload()">play again</button> -->
+       </div>
+        
+    </div>
+    <div class="container" id="container"></div>
+    
+<script src="./assets/js/main.js"></script>    
+</body>
+</html>
