@@ -59,7 +59,7 @@ startgameButton.addEventListener("click", function(){
                 playAgainScreen.classList.remove("hidden")
                 difficultyContainer.classList.add("blur")
                 container.classList.add("blur")
-                showBombs(bombsArray, cellNumber, element)
+                showBombs(bombsArray)
 
             }else if(noBombCounter==cells.length - 16){
                 youWonScreen.classList.remove("hidden")
@@ -126,17 +126,18 @@ function checkBomb(bombsArray, cellNumber, divToAddClass, count){
 
 
 
-function showBombs(bombsArray, cellNumber, divToRemoveClass){
-    const divBombs = []
-    if(bombsArray.includes(cellNumber)){
-       divBombs.push(divToRemoveClass)
-       for(let index=0;index < divBombs.length;index++){
-           divBombs[index].classList.remove("hidden")
-       }
-        
+function showBombs(bombsArray){
+    const cells = document.getElementsByClassName("grid_cell")
+    for(let i = 0; i<cells.length;i++){
+        let element = cells[i]
+        const cellNumber = parseInt(element.innerText)
+        if(bombsArray.includes(cellNumber)){
+            element.classList.add("bomb")
+            element.innerHTML = "💣"
+        }
     }
-
-
+    
+    
    
    
 
