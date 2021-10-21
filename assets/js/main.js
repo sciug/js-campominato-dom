@@ -12,6 +12,7 @@ startgameButton.addEventListener("click", function(){
     console.log(bombsArray)
     
 
+
     
 
     for(let i =1; i<=difficulty.value; i++){
@@ -28,27 +29,33 @@ startgameButton.addEventListener("click", function(){
         }else if(difficulty.value==49){
             container.classList.add("container_easy")
         }
-        
+           
 
 
-        divEl.addEventListener("click", function(){
-
-
-            
-            if(this.classList.contains("backGroundCliccked")){
-                this.classList.remove("backGroundCliccked")
-            }else{
-                this.classList.add("backGroundCliccked")
-            }
-
-        })
-                       
+                 
     }
 
-    const divs = document.getElementsByClassName("grid_cell")
-    console.log(divs)
+    
+    const cells = document.getElementsByClassName("grid_cell")
+    console.log(cells)
 
-    const arrayBombs = generateBombs()
+    for(let i = 0; i<cells.length;i++){
+        const element = cells[i]
+
+        element.addEventListener("click", function(){
+            const cellNumber = parseInt(this.innerText)
+            this.classList.add("backGroundCliccked")
+            checkBomb(bombsArray, cellNumber)
+
+        })
+
+
+        
+
+    }
+
+
+  
     
 
 
@@ -61,13 +68,6 @@ startgameButton.addEventListener("click", function(){
 /* function reload() {
     location.reload();
 } */
-
-
-
-
-
-
-
 
 
 
@@ -89,13 +89,12 @@ function getRandom(min, max) {
         }
 
     }
-    console.log(bombs)
-
+    return bombs
     
 }
 
-function checkBomb(bombsArrayElement, cellNumber){
-    if(bombsArrayElement == cellNumber){
+function checkBomb(bombsArray, cellNumber){
+    if(bombsArray.includes(cellNumber)){
         console.log("it's a bomb")
     }else{
         console.log("keep playing")
