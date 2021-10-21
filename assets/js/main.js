@@ -2,10 +2,16 @@ const difficulty = document.getElementById("difficulty")
 const startgameButton = document.getElementById("generate")
 const container= document.getElementById("container")
 const difficultyGroup = document.getElementById("difficulty_group")
-
+const playAgainScreen = document.getElementById("playAgain")
+const youWonScreen = document.getElementById("victory")
 
 
 startgameButton.addEventListener("click", function(){
+
+    container.innerHTML=""
+    difficultyGroup.classList.add("hidden")
+    startgameButton.classList.add("hidden")
+
 
     
     const bombsArray = generateBombs()
@@ -40,12 +46,19 @@ startgameButton.addEventListener("click", function(){
     console.log(cells)
 
     for(let i = 0; i<cells.length;i++){
-        const element = cells[i]
+        let element = cells[i]
 
         element.addEventListener("click", function(){
             const cellNumber = parseInt(this.innerText)
             this.classList.add("backGroundCliccked")
-            checkBomb(bombsArray, cellNumber)
+            checkBomb(bombsArray, cellNumber, this, count)
+            const noBombCounter = counter()
+            if(this.classList.contains("bomb")){
+                playAgainScreen.classList.remove("hidden")
+
+            }else if(noBombCounter==cells.length - 16){
+                youWonScreen.classList.remove("hidden")
+            }
 
         })
 
@@ -65,9 +78,9 @@ startgameButton.addEventListener("click", function(){
 
 })
 
-/* function reload() {
+ function reload() {
     location.reload();
-} */
+} 
 
 
 
@@ -93,11 +106,26 @@ function getRandom(min, max) {
     
 }
 
-function checkBomb(bombsArray, cellNumber){
+function checkBomb(bombsArray, cellNumber, divToAddClass, count){
+
     if(bombsArray.includes(cellNumber)){
-        console.log("it's a bomb")
+        divToAddClass.classList.add("bomb")
+        divToAddClass.innerHTML = "💣"
     }else{
         console.log("keep playing")
     }
 
 }
+
+
+
+
+let count= 0
+
+function counter(){
+    count++
+    console.log(count)
+    return count
+
+}
+
