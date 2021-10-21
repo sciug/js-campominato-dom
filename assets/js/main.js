@@ -4,6 +4,8 @@ const container= document.getElementById("container")
 const difficultyGroup = document.getElementById("difficulty_group")
 const playAgainScreen = document.getElementById("playAgain")
 const youWonScreen = document.getElementById("victory")
+const difficultyContainer = document.querySelector(".difficulty_container")
+
 
 
 startgameButton.addEventListener("click", function(){
@@ -55,9 +57,13 @@ startgameButton.addEventListener("click", function(){
             const noBombCounter = counter()
             if(this.classList.contains("bomb")){
                 playAgainScreen.classList.remove("hidden")
+                difficultyContainer.classList.add("blur")
+                container.classList.add("blur")
 
             }else if(noBombCounter==cells.length - 16){
                 youWonScreen.classList.remove("hidden")
+                difficultyContainer.classList.add("blur")
+                container.classList.add("blur")
             }
 
         })
