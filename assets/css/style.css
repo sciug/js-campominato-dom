@@ -1,36 +1,48 @@
 *{margin:0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;}
+    font-family: 'Poppins', sans-serif;}
     
     body{
         background-color: whitesmoke;
+        overflow-y: hidden;
+
     }
 
     .main_container{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        height: 100vh;
     }
 
 
 
     .difficulty_container{
-        margin: 2rem auto;
+        margin:0 auto;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     
     h2{
-        color:yellowgreen;
-        font-size: 3rem;
+        color:pink;
+        font-size: 5rem;
         text-transform: uppercase;
         font-weight: 900;
     }
     .title{
-        font-size: 1.5rem;
+        font-size: 3rem;
         vertical-align: middle;
-        margin: 0 1rem;
-        letter-spacing: 2px;
+        margin: 0 3rem;
+        letter-spacing: 3px;
+        text-shadow: 0px 1px 0px yellowgreen,
+         0px 2px 0px yellowgreen,
+         0px 3px 0px yellowgreen,
+         0px 4px 0px yellowgreen,
+         0px 5px 0px yellowgreen;
+
         
     }
     
@@ -38,27 +50,30 @@
         display: flex;
         flex-direction: column;
         width: 200px;
-        margin: auto;
+        margin: 4rem auto;
     }
     .label{
-        text-align: left;
-        font-size: .8rem;
+        text-align: center;
+        font-size: .6rem;
         letter-spacing: 1px;
-        color: rgb(173, 173, 173);
-        padding: 0rem 1rem;
-        margin-top: .5rem;
-        order: 2;
+        color:grey;
+        margin-bottom: .1rem;
+        text-transform: uppercase;
         
     }
     
     
-    .difficulty_group, .buttons{
-        margin-top: 2rem;
+    .buttons{
+        margin-top: 3rem;
     }
     #difficulty{
     border:none;
     padding: .5rem 1rem .5rem;
     border-radius: 50px;
+    color: pink;
+    }
+    #difficulty:focus-visible{
+        outline: 1px solid pink;
     }
     
     
@@ -137,10 +152,12 @@
     text-transform: uppercase;
     font-size: .7rem;
     font-weight: 800;
+    transition: all 250ms;
     }
     
     button:hover{
         cursor: pointer;
+        background-color: yellowgreen;
     }
 
 
@@ -155,7 +172,7 @@
 
 .playAgain{
     position: absolute;
-    top:50%;
+    top:60%;
     left: 50%;
     transform:translate(-50%,-50%);
     z-index: 5;
@@ -166,8 +183,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 50px;
-    box-shadow: 0px 0px 10px rgb(196, 196, 196);
 }
 
 
